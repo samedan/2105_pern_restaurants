@@ -1,0 +1,37 @@
+-- list all databases
+\l
+
+-- CREATE DATABASE practice;
+\c practice - connecyt to 'practice' databases
+
+-- create table
+CREATE TABLE products (
+  id      INT, 
+  name    VARCHAR(50),
+  price   INT,
+  on_sale boolean
+);
+
+-- display tables
+\d
+\d products
+
+-- add column
+ALTER TABLE products ADD COLUMN featured boolean
+
+-- delete column
+ALTER TABLE products DROP COLUMN featured;
+
+-- delete TABLE
+DROP TABLE products;
+
+-- delete databases
+DROP DATABASE practice;
+
+Tutorial:
+https://www.youtube.com/watch?v=7qAXvOFhlDc&t=6417s
+Deployment:
+https://www.youtube.com/watch?v=NjYsXuSBZ5U
+
+Source repo:
+https://github.com/Sanjeev-Thiyagarajan/PERN-STACK-YELP-CLONE
