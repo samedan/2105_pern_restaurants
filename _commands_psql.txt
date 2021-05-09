@@ -1,8 +1,12 @@
 -- list all databases
 \l
 
+-- SELECt databases
+\c yelp
+
 -- CREATE DATABASE practice;
 \c practice - connecyt to 'practice' databases
+
 
 -- create table
 CREATE TABLE products (
