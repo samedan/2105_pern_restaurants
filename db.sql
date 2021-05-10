@@ -33,3 +33,16 @@ CREATE TABLE reviews (
   review TEXT NOT NULL,
   rating INT NOT NULL check(rating >= 1 and rating <= 5 )
 );
+
+
+// COUNT NR of restaurants in location
+SELECT location, COUNT(location) FROM restaurants GROUP BY location;
+
+// COUNT NR of Ratings for each restaurants
+SELECT restaurant_id, COUNT(restaurant_id) FROM reviews GROUP BY restaurant_id;
+
+// JOIN Restaurants & reviews tables
+SELECT * FROM restaurants INNER JOIN reviews ON restaurants.id=reviews.restaurant_id;
+
+// 
+SELECT * FROM restaurants LEFT JOIN (SELECT restaurant_id, COUNT(*), TRUNC(AVG(rating),1) AS average_rating FROM reviews GROUP BY restaurant_id) reviews ON restaurants.id=reviews.restaurant_id;
